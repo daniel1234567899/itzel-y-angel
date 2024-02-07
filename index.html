@@ -331,26 +331,26 @@
                             <div class="wpb_wrapper">
                                 <div class="wpcf7" id="wpcf7-f59-p13-o1" lang="en-US" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form name="" action="#" method="post" class="wpcf7-form" novalidate="novalidate">
+                                    <form onsubmit="enviar_ajax(); return false" id="form1" class="wpcf7-form" >
                                         <div class="form7-wrap">
                                             
                                             <div class="content-form7">
                                                 <div class="form7-item">
                                                     <label>Nombre: </label>
                                                     <span class="wpcf7-form-control-wrap your-name">
-                                                        <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" />
+                                                        <input type="text" name="nombre" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"  required />
                                                     </span>
                                                 </div>
                                                 <div class="form7-item">
                                                     <label>Correo: </label>
                                                     <span class="wpcf7-form-control-wrap your-guest">
-                                                        <input type="email" name="your-guest" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" />
+                                                        <input type="email" name="correo" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required />
                                                     </span>
                                                 </div>
                                                 <div class="form7-item your-event">
                                                     <label>Confirmación: </label>
                                                         <span class="wpcf7-form-control-wrap your-event">
-                                                            <select name="your-event:" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                                            <select name="confrimacion" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" required>
                                                                 <option value="">Elija una opción</option>
                                                                 <option value="Si">Si</option>
                                                                 <option value="No">No</option>
@@ -362,7 +362,7 @@
                                                  </div>
                                             </div>
                                         </div>
-                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
+                                       
                                     </form>
                                 </div>
                             </div>
@@ -397,13 +397,7 @@
             </footer>
         </div>
   
-        <script type='text/javascript' src='js/contact-form-7/jquery.form.min.js'></script>
-        <script type='text/javascript' src='js/contact-form-7/scripts.js'></script>
-        <script type='text/javascript' src='js/woocommerce/add-to-cart.min.js'></script>
-        <script type='text/javascript' src='js/woocommerce/jquery.blockUI.min.js'></script>
-        <script type='text/javascript' src='js/woocommerce/woocommerce.min.js'></script>
-        <script type='text/javascript' src='js/woocommerce/jquery.cookie.min.js'></script>
-        <script type='text/javascript' src='js/woocommerce/cart-fragments.min.js'></script>
+      
         <script type='text/javascript' src='js/bootstrap.min.js'></script>
         <script type='text/javascript' src='js/jquery.parallax-1.1.3.js'></script>
         <script type='text/javascript' src='js/owl.carousel.js'></script>
@@ -417,6 +411,26 @@
         <script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
         <script type='text/javascript' src='js/jplayer.playlist.min.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+function enviar_ajax(){ 
+
+    $.ajax({
+    type: 'POST',
+    url: 'proccess.php',
+    data: $('#form1').serialize(),
+    success: function(respuesta) {
+        if(respuesta=='ok'){
+        alert('enviado');
+        }
+        else {
+        alert('error');
+        }
+    }
+    });
+}
+</script>
+
         <script>
             document.querySelector('body').addEventListener('click', () => {
                 document.querySelector('audio').play();
