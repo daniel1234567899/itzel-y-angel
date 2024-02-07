@@ -331,7 +331,7 @@
                             <div class="wpb_wrapper">
                                 <div class="wpcf7" id="wpcf7-f59-p13-o1" lang="en-US" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form class="wpcf7-form" novalidate="novalidate">
+                                    <form class="wpcf7-form" onsubmit="enviar_ajax(); return false" id="form1">
                                         <div class="form7-wrap">
                                             
                                             <div class="content-form7">
@@ -416,7 +416,7 @@ function enviar_ajax(){
 
     $.ajax({
     type: 'POST',
-    url: 'proccess.php',
+    url: 'https://captivusagencia.com/mail-bodaia.php',
     data: $('#form1').serialize(),
     success: function(respuesta) {
         if(respuesta=='ok'){
