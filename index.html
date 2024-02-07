@@ -331,26 +331,26 @@
                             <div class="wpb_wrapper">
                                 <div class="wpcf7" id="wpcf7-f59-p13-o1" lang="en-US" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form onsubmit="enviar_ajax(); return false" id="form1" class="wpcf7-form" >
+                                    <form class="wpcf7-form" novalidate="novalidate">
                                         <div class="form7-wrap">
                                             
                                             <div class="content-form7">
                                                 <div class="form7-item">
                                                     <label>Nombre: </label>
                                                     <span class="wpcf7-form-control-wrap your-name">
-                                                        <input type="text" name="nombre" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"  required />
+                                                        <input type="text" name="nombre" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required />
                                                     </span>
                                                 </div>
                                                 <div class="form7-item">
                                                     <label>Correo: </label>
                                                     <span class="wpcf7-form-control-wrap your-guest">
-                                                        <input type="email" name="correo" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required />
+                                                        <input type="email" name="mail" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" required />
                                                     </span>
                                                 </div>
                                                 <div class="form7-item your-event">
                                                     <label>Confirmación: </label>
                                                         <span class="wpcf7-form-control-wrap your-event">
-                                                            <select name="confrimacion" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" aria-required="true" required>
+                                                            <select name="confirmacion" class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required" required>
                                                                 <option value="">Elija una opción</option>
                                                                 <option value="Si">Si</option>
                                                                 <option value="No">No</option>
@@ -362,7 +362,7 @@
                                                  </div>
                                             </div>
                                         </div>
-                                       
+                                        <div class="wpcf7-response-output wpcf7-display-none"></div>
                                     </form>
                                 </div>
                             </div>
@@ -397,7 +397,6 @@
             </footer>
         </div>
   
-      
         <script type='text/javascript' src='js/bootstrap.min.js'></script>
         <script type='text/javascript' src='js/jquery.parallax-1.1.3.js'></script>
         <script type='text/javascript' src='js/owl.carousel.js'></script>
@@ -428,9 +427,7 @@ function enviar_ajax(){
         }
     }
     });
-}
-</script>
-
+}</script>
         <script>
             document.querySelector('body').addEventListener('click', () => {
                 document.querySelector('audio').play();
