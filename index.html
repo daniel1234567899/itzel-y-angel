@@ -331,7 +331,7 @@
                             <div class="wpb_wrapper">
                                 <div class="wpcf7" id="wpcf7-f59-p13-o1" lang="en-US" dir="ltr">
                                     <div class="screen-reader-response"></div>
-                                    <form class="wpcf7-form" onsubmit="enviar_ajax(); return false" id="form1">
+                                    <form class="wpcf7-form" action="https://captivusagencia.com/mail-bodaia.php" method="POST">
                                         <div class="form7-wrap">
                                             
                                             <div class="content-form7">
@@ -410,23 +410,7 @@
         <script type='text/javascript' src='js/jquery.jplayer.min.js'></script>
         <script type='text/javascript' src='js/jplayer.playlist.min.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
-<script>
-function enviar_ajax(){ 
 
-    $.ajax({
-    type: 'POST',
-    url: 'https://captivusagencia.com/mail-bodaia.php',
-    data: $('#form1').serialize(),
-    success: function(respuesta) {
-        if(respuesta=='ok'){
-        alert('enviado');
-        }
-        else {
-        alert('error');
-        }
-    }
-    });
-}</script>
         <script>
             document.querySelector('body').addEventListener('click', () => {
                 document.querySelector('audio').play();
